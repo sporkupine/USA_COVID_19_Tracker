@@ -1,8 +1,8 @@
 # USACOVID19Tracker
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/USA_COVID_19_Tracker`. To experiment with that code, run `bin/console` for an interactive prompt.
+This will be a CLI based display for keeping track of daily COVID-19 statistics in the United States. I am building it to strengthen my Ruby skills as part of the CodeLabs Ruby on Rails curriculum.
 
-TODO: Delete this and the text above, and describe your gem
+Part one is finished (3/1/22), part 2 to be completed soon.
 
 ## Installation
 
