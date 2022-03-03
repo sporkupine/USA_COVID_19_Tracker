@@ -3,6 +3,7 @@ class CLI
     CRUD.create_secure_users
     system('clear')
     greeting
+    login
     while menu != "exit"
     end 
     end_program
