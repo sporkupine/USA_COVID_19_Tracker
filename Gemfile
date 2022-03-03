@@ -8,3 +8,6 @@ gemspec
 gem "rake", "~> 13.0"
 
 gem "rubocop", "~> 1.21"
+
+gem "nokogiri", "~> 1.12", ">= 1.12.5"
+gem "open-uri", "~> 0.1.0"
