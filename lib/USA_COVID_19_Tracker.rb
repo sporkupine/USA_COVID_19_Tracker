@@ -7,6 +7,10 @@ module USACOVID19Tracker
   # Your code goes here...
 end
 
-require_relative "USA_COVID_19_Tracker/cli.rb"
-require_relative "./country.rb"
-require_relative "./state.rb"
+require "bcrypt"
+require_relative "country.rb"
+require_relative "state.rb"
+require_relative "scraper.rb"
+require_relative "user.rb"
+require_relative "crud.rb"
+require_relative "USA_Covid_19_Tracker/cli.rb"

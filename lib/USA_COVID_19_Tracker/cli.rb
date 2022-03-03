@@ -1,5 +1,6 @@
 class CLI
   def run
+    CRUD.create_secure_users
     system('clear')
     greeting
     while menu != "exit"
@@ -47,4 +48,19 @@ class CLI
     end
   end
 
+  def login
+    authenticated = false
+    while authenticated != true
+      puts "Please log in."
+      puts "Enter your username:"
+      username = gets.chomp.downcase
+      puts "Enter your password:"
+      password = gets.chomp.downcase
+      if CRUD.authenticate_user(username, password)
+        authenticated = true
+      else
+        puts "Authentication failed. Please try again."
+      end
+    end
+  end
 end
