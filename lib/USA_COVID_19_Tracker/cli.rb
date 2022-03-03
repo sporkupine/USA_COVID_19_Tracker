@@ -2,7 +2,8 @@ class CLI
   def run
     system('clear')
     greeting
-    menu
+    while menu != "exit"
+    end 
     end_program
   end
 
@@ -17,6 +18,8 @@ class CLI
   def menu
     list_options
     input = gets.chomp.downcase
+    choose_option(input)
+    return input
   end
 
   def list_options
@@ -32,4 +35,16 @@ class CLI
       Which one would you prefer?
     DOC
   end
+
+  def choose_option(option)
+    case option
+      when "1"
+        puts "Option 1 chosen"
+      when "2"
+        puts "Option 2 chosen"
+      when "3"
+        puts "Option 3 chosen"
+    end
+  end
+
 end
