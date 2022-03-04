@@ -31,9 +31,9 @@ class CLI
     # the '' means replace every white space with an empty quote
     # try replacing '' with '_'
     puts <<-DOC.gsub /^\s*/, '' 
-      1.
-      2.
-      3.
+      1. Option 1
+      2. Option 2
+      3. Option 3
       Which one would you prefer?
     DOC
   end
@@ -46,6 +46,8 @@ class CLI
         puts "Option 2 chosen"
       when "3"
         puts "Option 3 chosen"
+      else
+        puts "invalid selection, please try again."
     end
   end
 

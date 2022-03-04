@@ -8,6 +8,6 @@ class Country
 
   def initialize(attributes)
     attributes.each {|key, value| self.send("#{key}=", value)}
-
+    @@Countries << self
   end
 end
