@@ -8,6 +8,7 @@ module USACOVID19Tracker
 end
 
 require "bcrypt"
+require_relative "concerns/grabbable.rb"
 require_relative "country.rb"
 require_relative "state.rb"
 require_relative "scraper.rb"

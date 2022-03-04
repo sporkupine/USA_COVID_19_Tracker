@@ -1,4 +1,5 @@
 class Country
+  include Grabbable::Store
   attr_accessor :name, :confirmed_cases, :overall_deaths, :recoveries
   @@Countries = []
 
@@ -8,6 +9,6 @@ class Country
 
   def initialize(attributes)
     attributes.each {|key, value| self.send("#{key}=", value)}
-    @@Countries << self
+    save
   end
 end

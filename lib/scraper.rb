@@ -28,16 +28,11 @@ class Scraper
         cases = text_to_integer(row.css('td')[2].text)
         deaths = text_to_integer(row.css('td')[4].text)
         recoveries = text_to_integer(row.css('td')[6].text)
-        # puts "name: #{name}, cases: #{cases}, deaths: #{deaths}, recoveries: #{recoveries}"
         next if name.include?("District")
         State.new({name: name, confirmed_cases: cases, overall_deaths: deaths, recoveries: recoveries})
       end
-
-      p State.all
 
   end
 
 
 end
-Scraper.scrape_usa
-Scraper.scrape_states

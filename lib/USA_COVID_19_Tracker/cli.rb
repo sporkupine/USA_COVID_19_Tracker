@@ -1,7 +1,8 @@
 class CLI
   def run
-    CRUD.create_secure_users
+    scrape
     system('clear')
+    CRUD.create_secure_users
     greeting
     login
     while menu != "exit"
@@ -31,8 +32,8 @@ class CLI
     # the '' means replace every white space with an empty quote
     # try replacing '' with '_'
     puts <<-DOC.gsub /^\s*/, '' 
-      1. Option 1
-      2. Option 2
+      1. Show 10 states with most active cases
+      2. Show 10 states with least active cases
       3. Option 3
       Which one would you prefer?
     DOC
@@ -41,9 +42,15 @@ class CLI
   def choose_option(option)
     case option
       when "1"
-        puts "Option 1 chosen"
+        State.all[0..9].each_with_index do |state, i|
+          puts "#{i + 1}. #{state.name} - confirmed cases: #{state.confirmed_cases}"
+        end
+      puts ""
       when "2"
-        puts "Option 2 chosen"
+        State.all.reverse[0..9].each_with_index do |state, i|
+          puts "#{i + 1}. #{state.name} - confirmed cases: #{state.confirmed_cases}"
+        end
+      puts ""
       when "3"
         puts "Option 3 chosen"
       else
@@ -65,5 +72,10 @@ class CLI
         puts "Authentication failed. Please try again."
       end
     end
+  end
+
+  def scrape
+    Scraper.scrape_usa
+    Scraper.scrape_states
   end
 end
